@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 /*/    routes   /*/
 import PayScreen from "../pay/index";
+import AssetsScreen from "../assets/index";
 /*/    routes   /*/
 
 const Tab = createBottomTabNavigator();
@@ -12,8 +13,23 @@ const Tab = createBottomTabNavigator();
 const Home = () => {
   return (
     // <NavigationContainer>
-    <Tab.Navigator>
-      <Tab.Screen name="Pay" component={PayScreen} />
+    <Tab.Navigator
+      sreenOptions={{
+        style: {
+          backgroundColor: "red",
+        },
+      }}
+    >
+      <Tab.Screen
+        name="Pay"
+        component={PayScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Assets"
+        component={AssetsScreen}
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
     // </NavigationContainer>
   );
